@@ -1,15 +1,36 @@
 PODS:
-  - JQNetwork (0.1.0)
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - JQNetwork (0.1.0):
+    - AFNetworking
 
 DEPENDENCIES:
   - JQNetwork (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
 
 EXTERNAL SOURCES:
   JQNetwork:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JQNetwork: b982a8d6d80a67bc09bfa9aaa83be17c9618e6da
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  JQNetwork: 8e110529fab3c50dc76af4b0bcaff83f7db91433
 
 PODFILE CHECKSUM: 3d6875e64390d69cb3daa35a9f9d0b24bbbac5e7
 
