@@ -1,0 +1,27 @@
+{
+  "name": "JQNetwork",
+  "version": "0.1.0",
+  "summary": "A short description of JQNetwork.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/vidonia/JQNetwork",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "vidonia": "wangjiaqian93@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/vidonia/JQNetwork.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "JQNetwork/Classes/**/*",
+  "dependencies": {
+    "AFNetworking": [
+
+    ]
+  }
+}

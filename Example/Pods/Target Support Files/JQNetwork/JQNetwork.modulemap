@@ -1,0 +1,6 @@
+framework module JQNetwork {
+  umbrella header "JQNetwork-umbrella.h"
+
+  export *
+  module * { export * }
+}

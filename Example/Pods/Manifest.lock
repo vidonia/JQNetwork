@@ -1,0 +1,16 @@
+PODS:
+  - JQNetwork (0.1.0)
+
+DEPENDENCIES:
+  - JQNetwork (from `../`)
+
+EXTERNAL SOURCES:
+  JQNetwork:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JQNetwork: b982a8d6d80a67bc09bfa9aaa83be17c9618e6da
+
+PODFILE CHECKSUM: 3d6875e64390d69cb3daa35a9f9d0b24bbbac5e7
+
+COCOAPODS: 1.11.2
