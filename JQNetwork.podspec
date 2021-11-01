@@ -33,13 +33,12 @@ TODO: Add long description of the pod here.
 
   s.dependency 'AFNetworking'
   
-  s.source_files = 'JQNetwork/Classes/**/*'
+  s.source_files = 'JQNetwork/Classes/JQNetworkDefine.h'
 
   s.subspec 'Request' do |request|
     request.source_files = 'JQNetwork/Classes/Request/**/*.{h,m}'
     request.public_header_files = 'JQNetwork/Classes/Request/**/*.h'
     request.dependency 'JQNetwork/Response'
-    request.dependency 'JQNetwork'
   end
   
   s.subspec 'Response' do |response|

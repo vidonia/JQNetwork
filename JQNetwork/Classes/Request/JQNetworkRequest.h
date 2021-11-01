@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JQNetworkDefine.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

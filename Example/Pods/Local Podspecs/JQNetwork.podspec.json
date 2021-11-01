@@ -1,6 +1,6 @@
 {
   "name": "JQNetwork",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "summary": "A short description of JQNetwork.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/vidonia/JQNetwork",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/vidonia/JQNetwork.git",
-    "tag": "0.1.0"
+    "tag": "1.0.1"
   },
   "platforms": {
     "ios": "9.0"
@@ -23,7 +23,7 @@
 
     ]
   },
-  "source_files": "JQNetwork/Classes/**/*",
+  "source_files": "JQNetwork/Classes/JQNetworkDefine.h",
   "subspecs": [
     {
       "name": "Request",

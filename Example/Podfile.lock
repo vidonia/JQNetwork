@@ -14,14 +14,14 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - JQNetwork (0.1.0):
+  - JQNetwork (1.0.1):
     - AFNetworking
-    - JQNetwork/Request (= 0.1.0)
-    - JQNetwork/Response (= 0.1.0)
-  - JQNetwork/Request (0.1.0):
+    - JQNetwork/Request (= 1.0.1)
+    - JQNetwork/Response (= 1.0.1)
+  - JQNetwork/Request (1.0.1):
     - AFNetworking
     - JQNetwork/Response
-  - JQNetwork/Response (0.1.0):
+  - JQNetwork/Response (1.0.1):
     - AFNetworking
 
 DEPENDENCIES:
@@ -37,7 +37,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  JQNetwork: df8c6b54d1e5259cd2b18b5ad33f57e9681e542e
+  JQNetwork: 8f9d0727c151f68522b5c20b20049bd6f8150cca
 
 PODFILE CHECKSUM: 3d6875e64390d69cb3daa35a9f9d0b24bbbac5e7
 

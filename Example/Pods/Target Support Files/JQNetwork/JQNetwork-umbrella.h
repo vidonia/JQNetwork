@@ -14,9 +14,6 @@
 #import "JQNetworkRequest.h"
 #import "JQRequestManager.h"
 #import "JQNetworkResponse.h"
-#import "JQNetworkRequest.h"
-#import "JQRequestManager.h"
-#import "JQNetworkResponse.h"
 
 FOUNDATION_EXPORT double JQNetworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char JQNetworkVersionString[];
