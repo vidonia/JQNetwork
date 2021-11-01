@@ -7,10 +7,66 @@
 
 #import "JQNetworkResponse.h"
 
+@interface JQNetworkResponse ()
+
+@property (nonatomic, copy, readwrite) id content;
+@property (nonatomic, copy, readwrite) NSURLRequest *request;
+@property (nonatomic, copy, readwrite) NSString *errorMessage;
+@property (nonatomic, assign, readwrite) JQNetworkResponseStatus status;
+@property (nonatomic, assign, readwrite) NSInteger requestId;
+
+@end
+
 @implementation JQNetworkResponse
 
 - (instancetype)initWithResponseObject:(id)responseObject requestId:(NSNumber *)requestId request:(NSURLRequest *)request error:(NSError *)error {
     
+    if (responseObject == nil && error == nil) {
+        return nil;
+    }
+    
+    self = [super init];
+    
+    if ([responseObject isKindOfClass:[NSData class]]) {
+        self.content = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:NULL];
+    } else {
+        self.content = responseObject;
+    }
+    
+    self.requestId = [requestId integerValue];
+    self.request = request;
+    self.status = [self responseStatusWithError:error];
+    
+    self.errorMessage = [NSString stringWithFormat:@"%@", error];
+    
+    return self;
+}
+
+#pragma mark - Private Method
+
+- (JQNetworkResponseStatus)responseStatusWithError:(NSError *)error {
+    if (error) {
+        
+        JQNetworkResponseStatus result = JQNetworkResponseStatusErrorNoNetwork;
+        
+        // 除了超时以外，所有错误都当成是无网络
+        if (error.code == NSURLErrorTimedOut) {
+            result = JQNetworkResponseStatusErrorTimeout;
+        }
+        
+        if (error.code == NSURLErrorCancelled) {
+            result = JQNetworkResponseStatusErrorCancel;
+        }
+        
+        if (error.code == NSURLErrorNotConnectedToInternet) {
+            result = JQNetworkResponseStatusErrorNoNetwork;
+        }
+        
+        return result;
+        
+    } else {
+        return JQNetworkResponseStatusSuccess;
+    }
 }
 
 @end
