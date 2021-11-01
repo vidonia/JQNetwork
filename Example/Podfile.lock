@@ -20,6 +20,7 @@ PODS:
     - JQNetwork/Response (= 0.1.0)
   - JQNetwork/Request (0.1.0):
     - AFNetworking
+    - JQNetwork/Response
   - JQNetwork/Response (0.1.0):
     - AFNetworking
 
@@ -36,7 +37,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  JQNetwork: 537dc8818735bab2fc3103b2f1c9475932b474ee
+  JQNetwork: df8c6b54d1e5259cd2b18b5ad33f57e9681e542e
 
 PODFILE CHECKSUM: 3d6875e64390d69cb3daa35a9f9d0b24bbbac5e7
 

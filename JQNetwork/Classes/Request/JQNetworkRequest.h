@@ -6,10 +6,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JQNetworkDefine.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class AFHTTPRequestSerializer;
+
 @interface JQNetworkRequest : NSObject
+
+@property (nonatomic, strong) AFHTTPRequestSerializer *httpSerializer;
+
+- (NSURLRequest *)GETMethodWithParams:(nullable NSDictionary *)params baseURL:(NSString *)baseURL path:(NSString *)path headers:(nullable NSDictionary *)headers;
+- (NSURLRequest *)POSTMethodWithParams:(nullable NSDictionary *)params baseURL:(NSString *)baseURL path:(NSString *)path headers:(nullable NSDictionary *)headers;
+- (NSURLRequest *)uploadRequestWithParams:(nullable NSDictionary *)params uploadParams:(NSDictionary *)uploadParams baseURL:(NSString *)baseURL path:(NSString *)path headers:(nullable NSDictionary *)headers mimeType:(NSString *)mimeType;
 
 @end
 

@@ -34,16 +34,16 @@
 }
 
 - (NSNumber *)request:(NSURLRequest *)request sessionManager:(AFHTTPSessionManager *)sessionManager success:(JQRequestCallback)success fail:(JQRequestCallback)fail {
-    __block NSURLSessionDataTask *dataTask = [sessionManager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull responseObj, id  _Nullable responseObject, NSError * _Nullable error) {
+    __block NSURLSessionDataTask *dataTask = [sessionManager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         NSNumber *requestId = @([dataTask taskIdentifier]);
         [self.taskTable removeObjectForKey:requestId];
         
-        JQNetworkResponse *response = [[JQNetworkResponse alloc] initWithResponseObject:responseObj requestId:requestId request:request error:error];
+        JQNetworkResponse *_response = [[JQNetworkResponse alloc] initWithResponseObject:responseObject requestId:requestId request:request error:error];
         
         if (error) {
-            fail?fail(response):nil;
+            fail?fail(_response):nil;
         } else {
-            success?success(response):nil;
+            success?success(_response):nil;
         }
         
     }];
@@ -54,6 +54,19 @@
     [dataTask resume];
     
     return requestId;
+}
+
+- (void)uploadWithURL:(NSString *)url {
+    [self.sessionManager GET:url parameters:@{} headers:@{} progress:nil success:nil failure:nil];
+    [self.sessionManager POST:@"" parameters:@{} headers:@{} constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+            
+        } progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+        }];
 }
 
 #pragma mark - Cancel
@@ -85,6 +98,7 @@
 - (AFHTTPSessionManager *)sessionManager {
     if (!_sessionManager) {
         _sessionManager = [AFHTTPSessionManager manager];
+        _sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", nil];
     }
     return _sessionManager;
 }

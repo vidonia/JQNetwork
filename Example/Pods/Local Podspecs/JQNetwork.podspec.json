@@ -23,11 +23,17 @@
 
     ]
   },
+  "source_files": "JQNetwork/Classes/**/*",
   "subspecs": [
     {
       "name": "Request",
       "source_files": "JQNetwork/Classes/Request/**/*.{h,m}",
-      "public_header_files": "JQNetwork/Classes/Request/**/*.h"
+      "public_header_files": "JQNetwork/Classes/Request/**/*.h",
+      "dependencies": {
+        "JQNetwork/Response": [
+
+        ]
+      }
     },
     {
       "name": "Response",

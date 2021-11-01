@@ -33,6 +33,8 @@ TODO: Add long description of the pod here.
 
   s.dependency 'AFNetworking'
   
+  s.source_files = 'JQNetwork/Classes/**/*'
+
   s.subspec 'Request' do |request|
     request.source_files = 'JQNetwork/Classes/Request/**/*.{h,m}'
     request.public_header_files = 'JQNetwork/Classes/Request/**/*.h'
