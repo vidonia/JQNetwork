@@ -56,19 +56,6 @@
     return requestId;
 }
 
-- (void)uploadWithURL:(NSString *)url {
-    [self.sessionManager GET:url parameters:@{} headers:@{} progress:nil success:nil failure:nil];
-    [self.sessionManager POST:@"" parameters:@{} headers:@{} constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-            
-        } progress:^(NSProgress * _Nonnull uploadProgress) {
-            
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            
-        }];
-}
-
 #pragma mark - Cancel
 
 - (void)cancelRequestWithRequestID:(NSNumber *)requestID {
