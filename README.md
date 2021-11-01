@@ -7,7 +7,15 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+```objc
+    JQNetworkRequest *request = [[JQNetworkRequest alloc] init];
+    NSURLRequest *urlReq = [request GETMethodWithParams:@{@"unionId":@"29"} baseURL:@"https://aaaa.bbbb.com/" path:@"/user-web/restapi/common/xxxxx" headers:nil];
+    [[JQRequestManager manager] request:urlReq success:^(JQNetworkResponse * _Nonnull response) {
+        NSLog(@"%@", response.content);
+    } fail:^(JQNetworkResponse * _Nonnull response) {
+        NSLog(@"%@", response.errorMessage);
+    }];
+```
 
 ## Requirements
 
