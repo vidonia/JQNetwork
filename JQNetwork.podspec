@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JQNetwork'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A short description of JQNetwork.'
 
 # This description is used to generate tags and improve search results.
@@ -39,6 +39,7 @@ TODO: Add long description of the pod here.
     request.source_files = 'JQNetwork/Classes/Request/**/*.{h,m}'
     request.public_header_files = 'JQNetwork/Classes/Request/**/*.h'
     request.dependency 'JQNetwork/Response'
+    request.dependency 'JQNetwork'
   end
   
   s.subspec 'Response' do |response|
