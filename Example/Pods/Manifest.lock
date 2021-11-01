@@ -16,6 +16,12 @@ PODS:
     - AFNetworking/NSURLSession
   - JQNetwork (0.1.0):
     - AFNetworking
+    - JQNetwork/Request (= 0.1.0)
+    - JQNetwork/Response (= 0.1.0)
+  - JQNetwork/Request (0.1.0):
+    - AFNetworking
+  - JQNetwork/Response (0.1.0):
+    - AFNetworking
 
 DEPENDENCIES:
   - JQNetwork (from `../`)
@@ -30,7 +36,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  JQNetwork: 8e110529fab3c50dc76af4b0bcaff83f7db91433
+  JQNetwork: 537dc8818735bab2fc3103b2f1c9475932b474ee
 
 PODFILE CHECKSUM: 3d6875e64390d69cb3daa35a9f9d0b24bbbac5e7
 

@@ -18,10 +18,21 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "JQNetwork/Classes/**/*",
   "dependencies": {
     "AFNetworking": [
 
     ]
-  }
+  },
+  "subspecs": [
+    {
+      "name": "Request",
+      "source_files": "JQNetwork/Classes/Request/**/*.{h,m}",
+      "public_header_files": "JQNetwork/Classes/Request/**/*.h"
+    },
+    {
+      "name": "Response",
+      "source_files": "JQNetwork/Classes/Response/**/*.{h,m}",
+      "public_header_files": "JQNetwork/Classes/Response/**/*.h"
+    }
+  ]
 }

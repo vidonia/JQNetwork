@@ -10,7 +10,8 @@
 #endif
 #endif
 
-#import "JQNetworkManager.h"
+#import "JQRequestManager.h"
+#import "JQResponseManager.h"
 
 FOUNDATION_EXPORT double JQNetworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char JQNetworkVersionString[];

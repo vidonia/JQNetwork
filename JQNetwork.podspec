@@ -30,9 +30,18 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'JQNetwork/Classes/**/*'
-  
+
   s.dependency 'AFNetworking'
-   
+  
+  s.subspec 'Request' do |request|
+    request.source_files = 'JQNetwork/Classes/Request/**/*.{h,m}'
+    request.public_header_files = 'JQNetwork/Classes/Request/**/*.h'
+    request.dependency 'JQNetwork/Response'
+  end
+  
+  s.subspec 'Response' do |response|
+    response.source_files = 'JQNetwork/Classes/Response/**/*.{h,m}'
+    response.public_header_files = 'JQNetwork/Classes/Response/**/*.h'
+  end
    
 end
