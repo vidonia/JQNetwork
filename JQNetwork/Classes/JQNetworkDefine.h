@@ -8,20 +8,20 @@
 #ifndef JQNetworkDefine_h
 #define JQNetworkDefine_h
 
-typedef NS_ENUM (NSUInteger, JQNetworkEnvironment) {
+typedef NS_ENUM (NSUInteger, JQNetworkEnvironment) { // 当前使用环境
     JQNetworkEnvironmentProduction = 0, // 生产环境
     JQNetworkEnvironmentTest, // 测试环境
     JQNetworkEnvironmentPre_production, // 灰度
 };
 
-typedef NS_ENUM (NSUInteger, JQNetworkRequestType) {
+typedef NS_ENUM (NSUInteger, JQNetworkRequestType) { // 请求方式
     JQNetworkRequestTypeGet = 0,
     JQNetworkRequestTypePost,
     JQNetworkRequestTypeUpload,
 };
 
 
-typedef NS_OPTIONS(NSUInteger, JQNetworkCachePolicy) {
+typedef NS_OPTIONS(NSUInteger, JQNetworkCachePolicy) { // 缓存策略
     JQNetworkCachePolicyNoCache = 0,
     JQNetworkCachePolicyMemory = 1 << 0,
     JQNetworkCachePolicyDisk = 1 << 1,

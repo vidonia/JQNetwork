@@ -34,6 +34,9 @@
 }
 
 - (NSNumber *)request:(NSURLRequest *)request sessionManager:(AFHTTPSessionManager *)sessionManager success:(JQRequestCallback)success fail:(JQRequestCallback)fail {
+    if (sessionManager == nil) {
+        sessionManager = self.sessionManager;
+    }
     __block NSURLSessionDataTask *dataTask = [sessionManager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         NSNumber *requestId = @([dataTask taskIdentifier]);
         [self.taskTable removeObjectForKey:requestId];
