@@ -14,6 +14,7 @@
 @property (nonatomic, copy, readwrite) NSString *errorMessage;
 @property (nonatomic, assign, readwrite) JQNetworkResponseStatus status;
 @property (nonatomic, assign, readwrite) NSInteger requestId;
+@property (nonatomic, assign, readwrite) BOOL isCache;
 
 @end
 
@@ -42,9 +43,31 @@
     return self;
 }
 
+- (instancetype)initWithData:(id)data {
+    
+    if (data == nil) {
+        return nil;
+    }
+
+    self = [super init];
+    
+    if ([data isKindOfClass:[NSData class]]) {
+        self.content = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    } else {
+        self.content = data;
+    }
+
+    self.status = JQNetworkResponseStatusSuccess;
+    
+    self.isCache = YES;
+    
+    return self;
+}
+
 #pragma mark - Private Method
 
 - (JQNetworkResponseStatus)responseStatusWithError:(NSError *)error {
+    
     if (error) {
         
         JQNetworkResponseStatus result = JQNetworkResponseStatusErrorNoNetwork;
@@ -64,9 +87,9 @@
         
         return result;
         
-    } else {
-        return JQNetworkResponseStatusSuccess;
     }
+    
+    return JQNetworkResponseStatusSuccess;
 }
 
 @end

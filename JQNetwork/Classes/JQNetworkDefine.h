@@ -21,10 +21,4 @@ typedef NS_ENUM (NSUInteger, JQNetworkRequestType) { // 请求方式
 };
 
 
-typedef NS_OPTIONS(NSUInteger, JQNetworkCachePolicy) { // 缓存策略
-    JQNetworkCachePolicyNoCache = 0,
-    JQNetworkCachePolicyMemory = 1 << 0,
-    JQNetworkCachePolicyDisk = 1 << 1,
-};
-
 #endif /* JQNetworkDefine_h */

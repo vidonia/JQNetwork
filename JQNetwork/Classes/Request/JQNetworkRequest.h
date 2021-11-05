@@ -38,6 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param mimeType 文件类型 ，@"image/png"
 - (NSURLRequest *)uploadRequestWithParams:(nullable NSDictionary *)params uploadParams:(NSDictionary *)uploadParams baseURL:(NSString *)baseURL path:(NSString *)path headers:(nullable NSDictionary *)headers mimeType:(NSString *)mimeType;
 
++ (NSString *)handleUrl:(NSString *)baseURL path:(NSString *)path;
+
 @end
 
 NS_ASSUME_NONNULL_END

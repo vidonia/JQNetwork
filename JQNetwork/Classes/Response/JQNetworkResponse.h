@@ -34,12 +34,16 @@ typedef NS_ENUM(NSUInteger, JQNetworkResponseStatus) {
 /// 请求ID
 @property (nonatomic, assign, readonly) NSInteger requestId;
 
+@property (nonatomic, assign, readonly) BOOL isCache;
+
 /// 初始化 Response
 /// @param responseObject 请求结果原始格式（nsdata或json）
 /// @param requestId 请求ID
 /// @param request 请求 request
 /// @param error 错误
 - (instancetype)initWithResponseObject:(id)responseObject requestId:(NSNumber *)requestId request:(NSURLRequest *)request error:(nullable NSError *)error;
+
+- (instancetype)initWithData:(id)data;
 
 @end
 

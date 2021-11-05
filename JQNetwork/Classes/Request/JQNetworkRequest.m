@@ -28,7 +28,7 @@
     NSAssert(path != nil, @"path 不能为空！");
 
     
-    NSString *urlString = [self handleUrl:baseURL path:path];
+    NSString *urlString = [JQNetworkRequest handleUrl:baseURL path:path];
     NSError *serializationError;
 
     NSMutableURLRequest *request = [self.httpSerializer requestWithMethod:method URLString:urlString parameters:params error:&serializationError];
@@ -45,7 +45,7 @@
 }
 
 - (NSURLRequest *)uploadRequestWithParams:(NSDictionary *)params uploadParams:(NSDictionary *)uploadParams baseURL:(NSString *)baseURL path:(NSString *)path headers:(NSDictionary *)headers mimeType:(NSString *)mimeType {
-    NSString *URLString = [self handleUrl:baseURL path:path];
+    NSString *URLString = [JQNetworkRequest handleUrl:baseURL path:path];
     NSError *error;
     NSMutableURLRequest *request = [self.httpSerializer multipartFormRequestWithMethod:@"POST" URLString:URLString parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         for (NSString *fileName in [uploadParams allKeys]) {
@@ -67,13 +67,12 @@
     return request;
 }
 
-#pragma mark - Private Method
-
-- (NSString *)handleUrl:(NSString *)baseURL path:(NSString *)path {
++ (NSString *)handleUrl:(NSString *)baseURL path:(NSString *)path {
     NSURL *URL = [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:baseURL]];
     NSString *urlString = [URL absoluteString];
     return urlString;
 }
+
 
 #pragma mark - LazyLoad
 
